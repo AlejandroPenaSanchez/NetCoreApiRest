@@ -1,0 +1,11 @@
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\bin\Debug\netcoreapp2.0\ApiRestAlejandro.deps.json
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\bin\Debug\netcoreapp2.0\ApiRestAlejandro.runtimeconfig.json
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\bin\Debug\netcoreapp2.0\ApiRestAlejandro.runtimeconfig.dev.json
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\bin\Debug\netcoreapp2.0\ApiRestAlejandro.dll
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\bin\Debug\netcoreapp2.0\ApiRestAlejandro.pdb
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\obj\Debug\netcoreapp2.0\ApiRestAlejandro.csprojResolveAssemblyReference.cache
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\obj\Debug\netcoreapp2.0\ApiRestAlejandro.csproj.CoreCompileInputs.cache
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\obj\Debug\netcoreapp2.0\ApiRestAlejandro.AssemblyInfoInputs.cache
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\obj\Debug\netcoreapp2.0\ApiRestAlejandro.AssemblyInfo.cs
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\obj\Debug\netcoreapp2.0\ApiRestAlejandro.dll
+C:\Users\aleja\ProyectosAlejandro\Proyectos clase\ApiRestAlejandro\obj\Debug\netcoreapp2.0\ApiRestAlejandro.pdb
