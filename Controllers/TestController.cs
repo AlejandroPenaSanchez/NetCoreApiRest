@@ -12,8 +12,8 @@ namespace ApiRestAlejandro.Controllers{
         public TestController(Context context)
         {
             _context = context;
-            
-            if(_context.TodoItems.Count() == 0)
+
+            if (_context.TodoItems.Count() == 0)
             {
                 _context.TodoItems.Add(new TodoItem { Name = "Item1" });
                 _context.SaveChanges();
@@ -30,7 +30,7 @@ namespace ApiRestAlejandro.Controllers{
         public IActionResult GetById(int id)
         {
             var item = _context.TodoItems.Find(id);
-            if(item == null)
+            if (item == null)
             {
                 return NotFound();
             }
@@ -40,7 +40,7 @@ namespace ApiRestAlejandro.Controllers{
         [HttpPost]
         public IActionResult Create([FromBody] TodoItem item)
         {
-            if(item == null){
+            if (item == null) {
                 return BadRequest();
             }
             _context.TodoItems.Add(item);
@@ -50,14 +50,14 @@ namespace ApiRestAlejandro.Controllers{
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] TodoItem item)
+        public IActionResult Change(int id, [FromBody] TodoItem item)
         {
-            if(item == null || item.Id != id){
+            if (item == null || item.Id != id) {
                 return BadRequest();
             }
 
             var todoItem = _context.TodoItems.Find(id);
-            if(todoItem == null){
+            if (todoItem == null) {
                 return NotFound();
             }
 
@@ -73,7 +73,7 @@ namespace ApiRestAlejandro.Controllers{
         public IActionResult Delete(int id)
         {
             var todoItem = _context.TodoItems.Find(id);
-            if(todoItem == null){
+            if (todoItem == null) {
                 return NotFound();
             }
 
@@ -82,6 +82,27 @@ namespace ApiRestAlejandro.Controllers{
             return NoContent();
         }
 
-        //[HttpPatch] ?
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, [FromBody] Dictionary<string,string> values)
+        {
+            var todoItem = _context.TodoItems.FirstOrDefault(ti => ti.Id == id);
+
+            if (todoItem == null)
+            {
+                return NotFound();
+            }
+
+            var todoItemProperties = todoItem.GetType().GetProperties();
+            foreach (var property in todoItemProperties) {//recorer mejor el diccionary que tiene menos datos 
+                if (values.Keys.ToList().Contains(property.ToString())) {
+                    todoItem.GetType().GetField(property.ToString()).SetValue(values[property.ToString()]);
+                }
+            }
+
+            _context.TodoItems.Update(todoItem);
+            _context.SaveChanges();
+
+            return new NoContentResult();
+        }
     }
 }
