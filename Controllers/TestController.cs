@@ -83,7 +83,7 @@ namespace ApiRestAlejandro.Controllers{
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, [FromBody] Dictionary<string,string> values)
+        public IActionResult Patch(int id, [FromBody] Dictionary<string,object> values)
         {
             var todoItem = _context.TodoItems.FirstOrDefault(ti => ti.Id == id);
 
@@ -94,8 +94,9 @@ namespace ApiRestAlejandro.Controllers{
 
             var todoItemProperties = todoItem.GetType().GetProperties();
             foreach (var property in todoItemProperties) {//recorer mejor el diccionary que tiene menos datos 
-                if (values.Keys.ToList().Contains(property.ToString())) {
-                    todoItem.GetType().GetField(property.ToString()).SetValue(values[property.ToString()]);
+                if (values.Keys.ToList().Contains(property.Name.ToString())) {
+                    var value = values[property.Name];
+                    todoItem.GetType().GetProperty(property.Name).SetValue(todoItem, value);
                 }
             }
 
