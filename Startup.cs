@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using ApiRestAlejandro.Models;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace ApiRestAlejandro
 {
@@ -27,6 +28,12 @@ namespace ApiRestAlejandro
         {
             services.AddDbContext<Context>(opt => opt.UseInMemoryDatabase("TodoList"));
             services.AddMvc();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +43,13 @@ namespace ApiRestAlejandro
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseMvc();
         }

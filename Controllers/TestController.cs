@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using ApiRestAlejandro.Models;
+using System;
 
 namespace ApiRestAlejandro.Controllers{
     [Route("api/[controller]")]
@@ -83,7 +84,7 @@ namespace ApiRestAlejandro.Controllers{
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, [FromBody] Dictionary<string,object> values)
+        public IActionResult Patch(int id, [FromBody] PatchValue property)
         {
             var todoItem = _context.TodoItems.FirstOrDefault(ti => ti.Id == id);
 
@@ -92,13 +93,38 @@ namespace ApiRestAlejandro.Controllers{
                 return NotFound();
             }
 
-            var todoItemProperties = todoItem.GetType().GetProperties();
-            foreach (var property in todoItemProperties) {//recorer mejor el diccionary que tiene menos datos 
-                if (values.Keys.ToList().Contains(property.Name.ToString())) {
-                    var value = values[property.Name];
-                    todoItem.GetType().GetProperty(property.Name).SetValue(todoItem, value);
-                }
+            //Posible Values
+            var name = "Name";
+            var isComplete = "IsComplete";
+
+            if (name.Equals(property.Key, StringComparison.InvariantCultureIgnoreCase))
+            {
+                todoItem.Name = property.Value;
             }
+            else if (isComplete.Equals(property.Key, StringComparison.InvariantCultureIgnoreCase))
+            {
+                todoItem.IsComplete = Convert.ToBoolean(property.Value);
+            }
+            else
+            {
+                return NotFound();
+            }
+           
+            //Este no controla los strings
+            //switch (property.Key)
+            //{
+            //    case "Name":
+            //        todoItem.Name = property.Value;
+            //        break;
+
+            //    case "IsComplete":
+            //        todoItem.IsComplete = Convert.ToBoolean(property.Value);
+            //        break;
+
+            //    default:
+            //        return NotFound();
+            //}
+
 
             _context.TodoItems.Update(todoItem);
             _context.SaveChanges();
@@ -106,4 +132,4 @@ namespace ApiRestAlejandro.Controllers{
             return new NoContentResult();
         }
     }
-}
+}           

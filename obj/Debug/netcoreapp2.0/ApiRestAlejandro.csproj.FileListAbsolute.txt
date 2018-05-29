@@ -20,3 +20,14 @@ C:\Users\MasterAAA\Desktop\Proyectos alejandro\dot net\NetCoreApiRest\obj\Debug\
 C:\Users\MasterAAA\Desktop\Proyectos alejandro\dot net\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.AssemblyInfo.cs
 C:\Users\MasterAAA\Desktop\Proyectos alejandro\dot net\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.dll
 C:\Users\MasterAAA\Desktop\Proyectos alejandro\dot net\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.pdb
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\bin\Debug\netcoreapp2.0\ApiRestAlejandro.deps.json
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\bin\Debug\netcoreapp2.0\ApiRestAlejandro.runtimeconfig.json
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\bin\Debug\netcoreapp2.0\ApiRestAlejandro.runtimeconfig.dev.json
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\bin\Debug\netcoreapp2.0\ApiRestAlejandro.dll
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\bin\Debug\netcoreapp2.0\ApiRestAlejandro.pdb
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.csprojResolveAssemblyReference.cache
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.csproj.CoreCompileInputs.cache
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.AssemblyInfoInputs.cache
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.AssemblyInfo.cs
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.dll
+C:\Users\MasterAAA\Desktop\Alejandro\NetCoreApiRest\obj\Debug\netcoreapp2.0\ApiRestAlejandro.pdb
